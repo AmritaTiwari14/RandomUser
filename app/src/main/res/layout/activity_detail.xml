@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".screens.detail.DetailActivity">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.randomuser.essencerandom.createrandomuser.screens.detail.DetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackground"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_detail_linear_layout_user_info_margin_top"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:background="@color/userBackground"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_view_user_picture"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/activity_detail_user_picture_negative_margin"
+                    android:contentDescription="@string/detail_activity_user_picture_content_description"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/text_view_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/activity_vertical_little_margin"
+                    android:drawablePadding="@dimen/activity_horizontal_little_margin"
+                    android:paddingHorizontal="@dimen/activity_horizontal_little_margin"
+                    android:text="@{viewModel.user.getUserCompleteName()}"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/activity_detail_user_name_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_view_user_nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/activity_horizontal_little_margin"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:text="@{@string/detail_activity_user_country(viewModel.user.getCountryName())}"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/activity_detail_user_nationality_size" />
+
+                <TextView
+                    android:id="@+id/text_view_user_date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/activity_horizontal_little_margin"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/activity_horizontal_little_margin"
+                    android:text="@{@string/detail_activity_user_dob(viewModel.user.getDateOfBirth())}"
+                    app:drawableStartCompat="@drawable/ic_cake" />
+
+                <TextView
+                    android:id="@+id/text_view_user_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/activity_horizontal_little_margin"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/text_view_selector"
+                    android:padding="@dimen/activity_horizontal_little_margin"
+                    android:paddingBottom="@dimen/activity_vertical_little_margin"
+                    android:text="@{@string/detail_activity_user_cell(viewModel.user.cell)}"
+                    app:drawableStartCompat="@drawable/ic_cell" />
+
+                <TextView
+                    android:id="@+id/text_view_user_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/activity_horizontal_little_margin"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/text_view_selector"
+                    android:padding="@dimen/activity_horizontal_little_margin"
+                    android:text="@{@string/detail_activity_user_phone(viewModel.user.phone)}"
+                    app:drawableStartCompat="@drawable/ic_phone" />
+
+                <TextView
+                    android:id="@+id/text_view_user_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/activity_horizontal_little_margin"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/text_view_selector"
+                    android:padding="@dimen/activity_horizontal_little_margin"
+                    android:text="@{viewModel.user.location.toString()}"
+                    app:drawableStartCompat="@drawable/ic_map" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_user_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/userBackground"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/text_view_user_date_of_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_registration_date(viewModel.user.getRegistrationDate())}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_email(viewModel.user.email)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/text_view_user_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_username(viewModel.user.login.username)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_little_margin"
+                    android:text="@{@string/detail_activity_user_password(viewModel.user.login.password)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_salt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_salt(viewModel.user.login.salt)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_md5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_md5(viewModel.user.login.md5)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_sha1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_sha1(viewModel.user.login.sha1)}" />
+
+                <TextView
+                    android:id="@+id/text_view_user_sha256"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/detail_activity_user_sha256(viewModel.user.login.sha256)}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

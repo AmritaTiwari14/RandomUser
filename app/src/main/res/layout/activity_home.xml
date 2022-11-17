@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_view_users"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityBackground"
+    android:paddingHorizontal="@dimen/activity_horizontal_little_margin"
+    android:paddingTop="@dimen/activity_vertical_little_margin"
+    tools:context=".screens.home.HomeActivity" />

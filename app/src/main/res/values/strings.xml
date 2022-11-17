@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">RandomUser</string>
+
+    <string name="action_retry">Retry</string>
+
+    <string name="home_activity_user_has_internet_connection">Network access available</string>
+    <string name="home_activity_user_has_no_internet_connection">No network available</string>
+    <string name="user_adapter_user_picture_content_description">User picture</string>
+    <string name="user_adapter_user_name">%s %s</string>
+
+    <string name="detail_activity_user_picture_content_description">Detail activity user picture</string>
+    <string name="detail_activity_user_country">Country: %s</string>
+    <string name="detail_activity_user_dob">Date of birth: %s</string>
+    <string name="detail_activity_user_registration_date">Registered: %s</string>
+    <string name="detail_activity_user_phone">Phone: %s</string>
+    <string name="detail_activity_user_cell">Cell: %s</string>
+
+    <string name="detail_activity_user_id">ID: %s - %s</string>
+    <string name="detail_activity_user_email">Email: %s</string>
+    <string name="detail_activity_user_username">Username: %s</string>
+    <string name="detail_activity_user_password">Password: %s</string>
+    <string name="detail_activity_user_salt">Salt: %s</string>
+    <string name="detail_activity_user_md5">MD5: %s</string>
+    <string name="detail_activity_user_sha1">SHA1: %s</string>
+    <string name="detail_activity_user_sha256">SHA256: %s</string>
+</resources>
